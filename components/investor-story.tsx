@@ -96,23 +96,23 @@ export function InvestorStory({ className }: InvestorStoryProps) {
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                       {benefit.icon}
                     </div>
-                    <h3 className="font-semibold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                    <h3 className="font-semibold mb-2 text-white">{benefit.title}</h3>
+                    <p className="text-sm text-white/80">{benefit.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             {/* CTA Card */}
-            <Card className="bg-primary text-primary-foreground">
+            <Card className="bg-primary text-white">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Ready to Start Your Journey?</h3>
-                <p className="mb-4">
+                <h3 className="text-xl font-semibold mb-2 text-white">Ready to Start Your Journey?</h3>
+                <p className="mb-4 text-white/90">
                   Join successful investors like Sarah and start scaling your portfolio with DSCR loans.
                 </p>
                 <a 
                   href="#apply" 
-                  className="inline-block bg-background text-foreground px-4 py-2 rounded-lg font-medium hover:bg-muted transition-colors"
+                  className="inline-block bg-white text-primary px-4 py-2 rounded-lg font-medium hover:bg-white/90 transition-colors"
                 >
                   Apply Now →
                 </a>

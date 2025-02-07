@@ -42,10 +42,10 @@ export function PropertyTypes({ className }: PropertyTypeProps) {
     <section className={cn("py-16 px-4 md:px-6", className)} id="property-types">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
             Financing for Every Strategy
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-white/80">
             Whether you're into short-term rentals or traditional leases, we've got you covered
           </p>
         </div>
@@ -55,9 +55,9 @@ export function PropertyTypes({ className }: PropertyTypeProps) {
             <Card key={index} className={cn("transition-all duration-300", type.color)}>
               <CardContent className="pt-6">
                 <div className="mb-4">{type.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{type.title}</h3>
-                <p className="text-muted-foreground mb-4">{type.description}</p>
-                <ul className="space-y-2">
+                <h3 className="text-xl font-semibold mb-2 text-white">{type.title}</h3>
+                <p className="text-white/80 mb-4">{type.description}</p>
+                <ul className="space-y-2 text-white">
                   {type.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />

@@ -45,11 +45,11 @@ export function Hero(props: HeroProps) {
             <span className="ml-2">→</span>
           </Link>
 
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in [animation-delay:200ms]">
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in [animation-delay:200ms] text-white">
             {props.title}
           </h1>
 
-          <p className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-2xl animate-fade-in [animation-delay:400ms]">
+          <p className="mx-auto max-w-[700px] text-xl text-white/80 md:text-2xl animate-fade-in [animation-delay:400ms]">
             {props.subtitle}
           </p>
 

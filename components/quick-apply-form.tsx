@@ -19,6 +19,8 @@ interface FormData {
   email: string;
   phone: string;
   propertyDetails: string;
+  submissionTime?: string;
+  ipAddress?: string;
 }
 
 export function QuickApplyForm({ className }: QuickApplyFormProps) {
@@ -36,13 +38,24 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
     setIsSubmitting(true);
 
     try {
+      // Get IP address
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      
+      // Prepare submission data with IP and timestamp
+      const submissionData = {
+        ...formData,
+        submissionTime: new Date().toISOString(),
+        ipAddress: ipData.ip
+      };
+
       // Send data to webhook
       const response = await fetch('https://workflows.datadrivenwebscraping.com/webhook/b87c58d8-75b0-4fb1-80d1-5ddc9578821a', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submissionData),
       });
 
       if (!response.ok) {
@@ -84,8 +97,8 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
           <Card className="p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold">Quick Application</h2>
-                <p className="text-muted-foreground">
+                <h2 className="text-2xl font-bold text-white">Quick Application</h2>
+                <p className="text-white/80">
                   Get pre-qualified in minutes with no impact to your credit
                 </p>
               </div>
@@ -169,6 +182,12 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
                 </div>
               </div>
 
+              <div className="text-sm text-white/70 border-t border-white/10 pt-4 mt-4">
+                <p>
+                  By submitting this application, I consent to receive communications from Rent Flow Capital and its representatives via email, phone, SMS, and automated systems regarding my loan application and related services. I understand these communications may include updates, offers, and AI-assisted responses. Message and data rates may apply. I can opt-out of these communications at any time.
+                </p>
+              </div>
+
               <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? "Submitting..." : "Get Pre-Qualified Now"}
               </Button>
@@ -178,12 +197,12 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
           {/* Benefits Section */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Why Apply Now?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Why Apply Now?</h3>
               <div className="grid gap-4">
                 <Card className="p-4 border-primary/50">
                   <CardContent className="p-0">
-                    <h4 className="font-semibold mb-2">Quick Response</h4>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-semibold mb-2 text-white">Quick Response</h4>
+                    <p className="text-white/80">
                       Get your loan terms within 24 hours of applying
                     </p>
                   </CardContent>
@@ -191,8 +210,8 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
                 
                 <Card className="p-4 border-primary/50">
                   <CardContent className="p-0">
-                    <h4 className="font-semibold mb-2">No Credit Impact</h4>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-semibold mb-2 text-white">No Credit Impact</h4>
+                    <p className="text-white/80">
                       Our pre-qualification process won't affect your credit score
                     </p>
                   </CardContent>
@@ -200,8 +219,8 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
                 
                 <Card className="p-4 border-primary/50">
                   <CardContent className="p-0">
-                    <h4 className="font-semibold mb-2">Lock Your Rate</h4>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-semibold mb-2 text-white">Lock Your Rate</h4>
+                    <p className="text-white/80">
                       Current rates starting at 6.99% - lock in your rate today
                     </p>
                   </CardContent>
@@ -210,8 +229,8 @@ export function QuickApplyForm({ className }: QuickApplyFormProps) {
             </div>
 
             <div className="bg-muted p-6 rounded-lg">
-              <h4 className="font-semibold mb-4">What Happens Next?</h4>
-              <ol className="space-y-4 list-decimal list-inside text-muted-foreground">
+              <h4 className="font-semibold mb-4 text-white">What Happens Next?</h4>
+              <ol className="space-y-4 list-decimal list-inside text-white/80">
                 <li>We'll review your application within 24 hours</li>
                 <li>You'll receive custom loan terms based on your property</li>
                 <li>Our team will guide you through document collection</li>

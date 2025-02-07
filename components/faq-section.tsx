@@ -52,10 +52,10 @@ export function FAQSection({ className }: FAQSectionProps) {
     <section className={cn("py-16 px-4 md:px-6", className)}>
       <div className="container max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-white/80">
             Everything you need to know about DSCR loans
           </p>
         </div>
@@ -63,10 +63,10 @@ export function FAQSection({ className }: FAQSectionProps) {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-left text-white">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-white/80">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -74,7 +74,7 @@ export function FAQSection({ className }: FAQSectionProps) {
         </Accordion>
 
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-6">
+          <p className="text-white/80 mb-6">
             Still have questions? We're here to help!
           </p>
           <a 
