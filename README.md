@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Multi-tenant Starter Template
+
+A minimalistic multi-tenant Next.js starter template with minimal setup and a modular design. Bring your own backend and database.
+
+[Demo](https://stack-template.vercel.app/)
+
+## Landing Page
+
+<div align="center">
+<img src="./assets/landing-page.png" alt="Teams" width="600"/>
+</div>
+
+## Dashboard
+
+<div align="center">
+<img src="./assets/dashboard-overview.png" alt="Teams" width="600"/>
+</div>
+
+## Multi-tenancy (Teams)
+
+<div align="center">
+<img src="./assets/team-switcher.png" alt="Teams" width="400"/>
+</div>
+
+## Account Settings
+
+<div align="center">
+<img src="./assets/account-settings.png" alt="Teams" width="500"/>
+</div>
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```bash
+    git clone git@github.com:stack-auth/stack-template.git
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    npm install
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Register an account on [Stack Auth](https://stack-auth.com), copy the keys from the dashboard, and paste them into the `.env.local` file. Then, enable "client team creation" on the team settings tab.
 
-## Learn More
+    If you want to learn more about Stack Auth or self-host it, check out the [Docs](https://docs.stack-auth.com) and [GitHub](https://github.com/stack-auth/stack).
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server and go to [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    npm run dev 
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features & Tech Stack
 
-## Deploy on Vercel
+- Next.js 14 app router
+- TypeScript
+- Tailwind & Shadcn UI
+- Stack Auth
+- Multi-tenancy (teams/orgs)
+- Dark mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Inspired by
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Shadcn UI](https://github.com/shadcn-ui/ui)
+- [Shadcn Taxonomy](https://github.com/shadcn-ui/taxonomy)

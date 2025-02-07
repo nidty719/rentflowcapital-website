@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 25% 12%;
+    --foreground: 210 40% 98%;
+    --card: 225 25% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 225 25% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 216 90% 52%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 225 25% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 216 90% 52%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 71% 28%;
+    --success-foreground: 210 40% 98%;
+    --border: 225 25% 24%;
+    --input: 225 25% 24%;
+    --ring: 216 90% 52%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Clean animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Modern gradients */
+.bg-hero-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--muted)) 100%
+  );
+}
+
+.bg-calculator-gradient {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--muted)) 100%
+  );
+}
+
+/* Clean overlays */
+.overlay-grid {
+  background-image: url('/images/geometric-grid.svg');
+  background-repeat: repeat;
+  opacity: 0.05;
+}
+
+.overlay-fade {
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--background)) 0%,
+    transparent 100%
+  );
+}
+
+/* Modern card effects */
+.card-highlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--primary) / 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.card-highlight:hover::before {
+  left: 100%;
+}
+
+/* Clean button effects */
+.button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: hsl(var(--primary) / 0.1);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.button-glow:hover::after {
+  transform: scale(1);
+}
