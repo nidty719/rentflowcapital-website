@@ -52,7 +52,7 @@ export function InvestorStory({ className }: InvestorStoryProps) {
                 focusing on her W-2 income, limiting her growth potential.
               </p>
 
-              <h3>The Traditional Lending Challenge</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">The Traditional Lending Challenge</h3>
               <p>
                 Despite having profitable properties generating strong cash flow, Sarah found herself 
                 hitting walls with conventional loans. Banks wanted to see more personal income, 
@@ -60,14 +60,14 @@ export function InvestorStory({ className }: InvestorStoryProps) {
                 well, but that didn't seem to matter.
               </p>
 
-              <h3>Discovering DSCR Loans</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">Discovering DSCR Loans</h3>
               <p>
                 Everything changed when Sarah discovered DSCR lending. Instead of focusing on her 
                 personal income, lenders looked at what mattered most: the property's ability to 
                 generate rental income. This opened up a world of possibilities.
               </p>
 
-              <h3>Scaling Her Portfolio</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">Scaling Her Portfolio</h3>
               <p>
                 With DSCR loans, Sarah was able to:
               </p>
@@ -78,7 +78,7 @@ export function InvestorStory({ className }: InvestorStoryProps) {
                 <li>Maintain clean, separate finances between properties</li>
               </ul>
 
-              <h3>The Power of Property-Based Lending</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">The Power of Property-Based Lending</h3>
               <p>
                 Today, Sarah manages a thriving portfolio of residential and short-term rental 
                 properties. DSCR loans allowed her to focus on what she does best: finding great 
