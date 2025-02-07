@@ -37,15 +37,15 @@ export function InvestorStory({ className }: InvestorStoryProps) {
           {/* Story Section */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight mb-4">
+              <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
                 Your Journey to Real Estate Success
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-white mb-8">
                 Discover how DSCR loans are changing the game for real estate investors
               </p>
             </div>
 
-            <div className="prose prose-lg dark:prose-invert">
+            <div className="prose prose-lg text-white">
               <p>
                 Meet Sarah, a successful real estate investor who started just like you. She had a vision 
                 of building a diverse portfolio but faced a common challenge: traditional lenders kept 
