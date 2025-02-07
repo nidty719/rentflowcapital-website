@@ -33,7 +33,7 @@ interface FeatureGridProps {
 export function FeatureGrid({ title, subtitle, items, className }: FeatureGridProps) {
   return (
     <section className={cn("py-16 px-4 md:px-6", className)}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center space-y-4 text-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-center space-y-4 text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-semibold text-white">
           {title}
         </h2>
