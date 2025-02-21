@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#F9FAFB" rx="16"/>
+  
+  <!-- Title and Description -->
+  <text x="40" y="50" fill="#111827" font-family="Inter, sans-serif" font-size="24" font-weight="bold">
+    What is DSCR?
+  </text>
+  
+  <text x="40" y="80" fill="#6B7280" font-family="Inter, sans-serif" font-size="16" font-weight="normal">
+    The DSCR is a tool to help lenders understand a borrower's ability to pay back a loan based on the monthly rental income of the property.
+  </text>
+
+  <!-- Single Family Properties Section -->
+  <text x="40" y="130" fill="#111827" font-family="Inter, sans-serif" font-size="20" font-weight="600">
+    For Single Family Properties:
+  </text>
+
+  <!-- DSCR Equation for Single Family -->
+  <text x="40" y="170" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    DSCR =
+  </text>
+  <text x="110" y="160" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    Rent
+  </text>
+  <line x1="110" y1="170" x2="160" y2="170" stroke="#4F46E5" stroke-width="2"/>
+  <text x="110" y="190" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    PITIA
+  </text>
+
+  <!-- PITIA Legend -->
+  <text x="200" y="160" fill="#6B7280" font-family="Inter, sans-serif" font-size="16">
+    P = Principal
+  </text>
+  <text x="200" y="185" fill="#6B7280" font-family="Inter, sans-serif" font-size="16">
+    I = Interest
+  </text>
+  <text x="320" y="160" fill="#6B7280" font-family="Inter, sans-serif" font-size="16">
+    T = Taxes
+  </text>
+  <text x="320" y="185" fill="#6B7280" font-family="Inter, sans-serif" font-size="16">
+    I = Insurance
+  </text>
+  <text x="440" y="160" fill="#6B7280" font-family="Inter, sans-serif" font-size="16">
+    A = Association dues
+  </text>
+
+  <!-- Commercial Properties Section -->
+  <text x="40" y="230" fill="#111827" font-family="Inter, sans-serif" font-size="20" font-weight="600">
+    For Commercial Properties:
+  </text>
+
+  <!-- DSCR Equation for Commercial -->
+  <text x="40" y="270" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    DSCR =
+  </text>
+  <text x="110" y="260" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    Net Operating Income
+  </text>
+  <line x1="110" y1="270" x2="280" y2="270" stroke="#4F46E5" stroke-width="2"/>
+  <text x="110" y="290" fill="#4F46E5" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    Annual Debt Obligations
+  </text>
+
+  <!-- Target -->
+  <text x="600" y="270" fill="#111827" font-family="Inter, sans-serif" font-size="18" font-weight="600">
+    Target: ≥ 1.25
+  </text>
+</svg> 

@@ -4,147 +4,103 @@
 
 @layer base {
   :root {
-    --background: 225 25% 12%;
-    --foreground: 210 40% 98%;
-    --card: 225 25% 14%;
-    --card-foreground: 210 40% 98%;
-    --popover: 225 25% 14%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 216 90% 52%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 244 75% 59%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 217 91% 60%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 225 25% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 216 90% 52%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --success: 142 71% 28%;
-    --success-foreground: 210 40% 98%;
-    --border: 225 25% 24%;
-    --input: 225 25% 24%;
-    --ring: 216 90% 52%;
-    --radius: 0.5rem;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply antialiased text-gray-900;
   }
 }
 
-/* Clean animations */
-@keyframes fadeIn {
-  from {
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Animations */
+@keyframes particle {
+  0% {
+    transform: translate(0, 0) scale(1);
     opacity: 0;
-    transform: translateY(10px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
   }
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
+@keyframes carousel {
+  0% {
     transform: translateX(0);
   }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+.animate-carousel {
+  animation: carousel linear infinite;
 }
 
-.animate-slide-in {
-  animation: slideIn 0.5s ease-out forwards;
+.animate-particle {
+  --tx: random(-100px, 100px);
+  --ty: random(-50px, 50px);
+  animation: particle 0.6s ease-out forwards;
 }
 
-/* Modern gradients */
-.bg-hero-gradient {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--background)) 0%,
-    hsl(var(--muted)) 100%
-  );
+@keyframes dust {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.bg-calculator-gradient {
-  background: linear-gradient(
-    45deg,
-    hsl(var(--background)) 0%,
-    hsl(var(--muted)) 100%
-  );
+.animate-dust {
+  animation: dust 0.6s ease-out forwards;
 }
 
-/* Clean overlays */
-.overlay-grid {
-  background-image: url('/images/geometric-grid.svg');
-  background-repeat: repeat;
-  opacity: 0.05;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.overlay-fade {
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--background)) 0%,
-    transparent 100%
-  );
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-/* Modern card effects */
-.card-highlight {
-  position: relative;
-  overflow: hidden;
+::-webkit-scrollbar-thumb {
+  background: #4F46E5;
+  border-radius: 4px;
 }
 
-.card-highlight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    hsl(var(--primary) / 0.1),
-    transparent
-  );
-  transition: 0.5s;
+::-webkit-scrollbar-thumb:hover {
+  background: #4338CA;
 }
 
-.card-highlight:hover::before {
-  left: 100%;
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Clean button effects */
-.button-glow {
-  position: relative;
-  overflow: hidden;
+/* Form Focus Styles */
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
-.button-glow::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-color: hsl(var(--primary) / 0.1);
-  border-radius: 50%;
-  transform: scale(0);
-  transition: transform 0.5s ease-out;
-}
-
-.button-glow:hover::after {
-  transform: scale(1);
+/* Transition Defaults */
+.transition-default {
+  @apply transition-all duration-200 ease-in-out;
 }
